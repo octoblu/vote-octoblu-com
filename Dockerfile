@@ -1,7 +1,8 @@
-FROM node:0.10-onbuild
+FROM nginx
 
-EXPOSE 9000
-
-ENV PATH $PATH:/usr/local/bin
+COPY *.html /usr/share/nginx/html
+COPY *.js /usr/share/nginx/html
+COPY *.css /usr/share/nginx/html
+COPY *.png /usr/share/nginx/html
 
 MAINTAINER Octoblu <docker@octoblu.com>
