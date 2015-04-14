@@ -1,0 +1,28 @@
+{
+  "name": "vote-octoblu-com",
+  "version": "1.0.0",
+  "description": "Vote",
+  "main": "geek-speak-voting.js",
+  "scripts": {
+    "start": "http-server -p 8889",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sqrtofsaturn/vote-octoblu-com.git"
+  },
+  "keywords": [
+    "meshblu",
+    "octoblu",
+    "vote"
+  ],
+  "author": "Octoblu Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sqrtofsaturn/vote-octoblu-com/issues"
+  },
+  "homepage": "https://github.com/sqrtofsaturn/vote-octoblu-com",
+  "devDependencies": {
+    "http-server": "^0.8.0"
+  }
+}
