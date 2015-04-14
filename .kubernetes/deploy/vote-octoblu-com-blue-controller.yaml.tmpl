@@ -1,0 +1,26 @@
+id: vote-octoblu-com-blue-controller
+kind: ReplicationController
+apiVersion: v1beta1
+labels:
+  name: vote-octoblu-com-blue
+  version: "$SHORT_COMMIT"
+desiredState:
+  replicas: 2
+  replicaSelector:
+    name: vote-octoblu-com-blue
+    version: "$SHORT_COMMIT"
+  podTemplate:
+    labels:
+      name: vote-octoblu-com-blue
+      app: vote-octoblu-com-blue
+      version: "$SHORT_COMMIT"
+    desiredState:
+      manifest:
+        version: v1beta1
+        id: vote-octoblu-com-blue
+        containers:
+          - name: vote-octoblu-com-blue
+            image: octoblu/vote-octoblu-com:$SHORT_COMMIT
+            ports:
+              - containerPort: 9000
+

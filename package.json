@@ -4,7 +4,7 @@
   "description": "Vote",
   "main": "geek-speak-voting.js",
   "scripts": {
-    "start": "http-server -p 8889",
+    "start": "http-server -p 9000",
     "test": "exit 0"
   },
   "repository": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/sqrtofsaturn/vote-octoblu-com/issues"
   },
   "homepage": "https://github.com/sqrtofsaturn/vote-octoblu-com",
-  "devDependencies": {
+  "dependencies": {
     "http-server": "^0.8.0"
   }
 }
