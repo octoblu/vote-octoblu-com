@@ -15,15 +15,15 @@ env:
   - DEPLOY_BUCKET=octoblu-deploy
   - DEPLOYMENT_GROUP=master
   - DEPLOY_KEY=vote-octoblu-com/vote-octoblu-com-$TRAVIS_COMMIT.zip
-  - secure: UsC5ylV5Ve1CaJFt+fZDm808HSbff8nogaCa2EEJFU1Cpk7upDEK89rvSO3LyCEyVernQ2clTlCd1ojPOGHjRiPuMdR48jEcTzR4XJlA/5uzbi+hSOegUtCMzifiz6WKgF58x4PHtKdtvXrrSotVQ1FHiR8UaXhoUgmwmWQ2sxI=
-  - secure: Udz32dLt8es69ezDq5sm1BBiyR02WG+iLYkx4yf5iLWq5F6VMVnuyV96IGOdbZV23FqKO2yl+PKEBKEsTEg9mR+LHLmdz+CSretKKxFiDljjqBCOFD9oNNHbV4jjISpRUrbim9M6UKril63wFFavf/5XV17Pr3Btg9cC73gMV9w=
+  - secure: hXqHJUr5Qf8HgsdcKwnksZD81zxjCkhC4XPUVdS7ptf3k5MxWkiQlfXXPy2YIZI5+xpXV0QTghrDG6INdX7SdTg9lup/yn5ybwTLmvV9+6M77qG4KYU0f35xKzQErkV0KklQdE8J2/ZpvP2BGPb1PzDvNgtz/EgwGVdxVDMiRUk=
+  - secure: XqpvG+cas5zzGdk7aA4psloC1/h5aCslFMJre1bFc0xM4Zn7MzLqHAU/ybvoBeXlmgDqPmwz50z/7MsWNSHmjiA+xoRoHYj9hjSqL+0wsR5fxP+3LrlNKdNO64qPwQmdONNoAWAErmP66X00T0ELOiC0ydQqb77DlrlPkbXb/4k=
 after_success:
-- ".kubernetes/travis_after_success"
+- .kubernetes/travis_after_success
 deploy:
 - provider: s3
   access_key_id: AKIAIT4X4NDGM2WVL6VA
-  secret_access_key: &1
-    secure: gOqZiVVTbVSms7ycMRCh8ZUXJUOltkix2eM2x27oJOGFH6PJpLPh3MroDi7urVRVyYRt3njPbGppxpQy2cfMIrUPaI8p295DGkvIE2zQn6dI1uYlm6uNRto7PhC/VTs5w6jhFbVCHG87iK2g+YmlVXycs2eY+GCQcMAZ55po4m0=
+  secret_access_key: &70307617732360
+    secure: cZ360f8T8WVqPOc3lF02X7Ara3/e/lA5NIkSSBlliCAbni0NFoLf6LOB35U3G21mkjIO65ch1KIaDWbtLQlhiePcTlxK+NaWdH9NuoABfUcQB9zJtpt1iHRAHH5ALHwy+qYQlJ+jQf6svF8kVfoRSW+7Irpu2Mj+C81F7PVLLvw=
   local_dir: dpl_cd_upload
   skip_cleanup: true
   bucket: octoblu-deploy
@@ -31,7 +31,7 @@ deploy:
     branch: master
 - provider: codedeploy
   access_key_id: AKIAIT4X4NDGM2WVL6VA
-  secret_access_key: *1
+  secret_access_key: *70307617732360
   bucket: octoblu-deploy
   key: docker-builder/vote-octoblu-com-$TRAVIS_COMMIT.zip
   bundle_type: zip
