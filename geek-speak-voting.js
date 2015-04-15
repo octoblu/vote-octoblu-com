@@ -18,11 +18,11 @@ var VoteButton = React.createClass({
   },
 
   render: function () {
-    var label = (this.props.value === 'Yes') ? 'Awesome' : 'Sucks';
+    var icon = (this.props.value === 'Yes') ? 'ss-like' : 'ss-dislike';
 
     return (
       <button className="vote-button" value={this.props.value} onClick={this.handleClick}>
-        {label}
+        <i className={icon}></i>
       </button>
     );
   }
@@ -121,8 +121,11 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <h1 className="title">What do you think of the current talk?</h1>
-        <VoteResults yesCount={this.state.yes} noCount={this.state.no} totalCount={this.state.total} />
+        <VoteResults
+          yesCount={this.state.yes}
+          noCount={this.state.no}
+          totalCount={this.state.total} />
+
         <div className="vote-buttons">
           <VoteButton value="Yes" ref="yes" onVote={this.handleVote}/>
           <VoteButton value="No" ref="no" onVote={this.handleVote}/>
