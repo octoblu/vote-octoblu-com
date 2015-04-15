@@ -31,6 +31,9 @@ var VoteButton = React.createClass({
 var VoteResults = React.createClass({
   countInPercent: function(count) {
     var percentValue = Math.ceil((count/this.props.totalCount) * 100) || 0;
+    if(percentValue > 100){
+      percentValue = 100;
+    }
     return percentValue.toString() + "%";
   },
 
